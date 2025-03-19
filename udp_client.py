@@ -16,6 +16,7 @@ def udp_client(host, port, message):
         print("Packet lost!")
         
     client_socket.close()
+    time.sleep(0.5)
 
 while True:
     udp_client('127.0.0.1', 12345, 'ping')

@@ -12,6 +12,7 @@ def tcp_client(host, port, message):
         
     print(f"Received: {data.decode()} | RTT: {end_time - start_time:.6f} sec")
     client_socket.close()
+    time.sleep(0.5)
 
 while True:
     tcp_client('127.0.0.1', 12345, 'ping')
