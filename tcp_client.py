@@ -11,7 +11,7 @@ def tcp_client(host, port, message):
     end_time = time.time()
         
     print(f"Received: {data.decode()} | RTT: {end_time - start_time:.6f} sec")
-    client_socket.close()
+    # client_socket.close()
     time.sleep(0.5)
 
 while True:

@@ -7,16 +7,15 @@ def tcp_server(host, port):
     server_socket.listen(1)
     print(f"TCP Server listening on {host}:{port}")
         
-    conn, addr = server_socket.accept()
-    print(f"Connected by {addr}")
-        
     while True:
+        conn, addr = server_socket.accept()
+        print(f"Connected by {addr}")
         data = conn.recv(1024)
         if not data:
             break
         conn.sendall(data)
         
-    conn.close()
+    # conn.close()
     time.sleep(0.5)
 
 while True:
