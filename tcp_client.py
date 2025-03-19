@@ -1,18 +1,17 @@
 import socket
 import time
 
-host='127.0.0.1'
-port=12345
-message='ping'
+def tcp_client(host, port, message):
+    client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    client_socket.connect((host, port))
+        
+    start_time = time.time()
+    client_socket.sendall(message.encode())
+    data = client_socket.recv(1024)
+    end_time = time.time()
+        
+    print(f"Received: {data.decode()} | RTT: {end_time - start_time:.6f} sec")
+    client_socket.close()
 
-
-client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-client_socket.connect((host, port))
-    
-start_time = time.time()
-client_socket.sendall(message.encode())
-data = client_socket.recv(1024)
-end_time = time.time()
-    
-print(f"Received: {data.decode()} | RTT: {end_time - start_time:.6f} sec")
-client_socket.close()
+while True:
+    tcp_client('127.0.0.1', 12345, 'ping')
