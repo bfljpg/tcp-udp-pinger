@@ -19,4 +19,4 @@ def udp_client(host, port, message):
     time.sleep(0.5)
 
 while True:
-    udp_client('127.0.0.1', 12345, 'ping')
+    udp_client('0.0.0.0', 29900, 'ping')

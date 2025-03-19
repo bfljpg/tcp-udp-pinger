@@ -20,4 +20,4 @@ def tcp_server(host, port):
     time.sleep(0.5)
 
 while True:
-    tcp_server('127.0.0.1', 12345)
+    tcp_server('0.0.0.0', 29900)

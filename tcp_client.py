@@ -15,4 +15,4 @@ def tcp_client(host, port, message):
     time.sleep(0.5)
 
 while True:
-    tcp_client('127.0.0.1', 12345, 'ping')
+    tcp_client('0.0.0.0', 29900, 'ping')
